@@ -4,7 +4,7 @@ using System.Collections;
 public class paddle : MonoBehaviour {
 
     Rigidbody2D rigidBody;
-    float speed = 5;
+   public float speed = 5;
 	// Use this for initialization
 	void Start () {
 	    rigidBody = GetComponent<Rigidbody2D>();
