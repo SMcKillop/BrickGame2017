@@ -3,6 +3,7 @@ using System.Collections;
 
 public class brick : MonoBehaviour {
 
+
 	// Use this for initialization
 	void Start () {
 
