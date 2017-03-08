@@ -1,31 +1,36 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ball : MonoBehaviour {
+public class ball : MonoBehaviour
+{
 
-   public Vector2 startingVelocity = new Vector2(5, -20);
+    public Vector2 startingVelocity = new Vector2(5, -20);
     private Vector3 startingPosition;
     public GameObject gameOver;
 
-    int lives = 3; 
+    int lives = 3;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         startingPosition = transform.position;
         GetComponent<Rigidbody2D>().velocity = startingVelocity;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	    if(transform.position.y < -3.5f)
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (transform.position.y < -3.5f)
         {
             GetOut();
         }
-        if(Input.GetButtonDown("Jump")) {
+        if (Input.GetButtonDown("Jump"))
+        {
             GetComponent<Rigidbody2D>().velocity = startingVelocity;
-    }
+        }
 
-        void GetOut();
+    }
+    void GetOut()
     {
         Debug.Log("You are out");
         lives = lives - 1;
@@ -35,10 +40,14 @@ public class ball : MonoBehaviour {
         if (lives == 0)
         {
             DoGameOver();
-        }    
+        }
+
+
     }
 
-    void DoGameOver() {
+    void DoGameOver()
+    {
 
-        gameOver.SetActive(true);}
+        gameOver.SetActive(true);
+    }
 }
