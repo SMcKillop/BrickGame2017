@@ -6,18 +6,17 @@ public class ball : MonoBehaviour
 
     public Vector2 startingVelocity = new Vector2(5, -20);
     private Vector3 startingPosition;
-    public GameObject gameOver;
+    public GameObject gameOverSign;
+    public GameObject youWinSign;
 
     int lives = 3;
 
-    // Use this for initialization
     void Start()
     {
         startingPosition = transform.position;
         GetComponent<Rigidbody2D>().velocity = startingVelocity;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (transform.position.y < -3.5f)
@@ -47,7 +46,14 @@ public class ball : MonoBehaviour
 
     void DoGameOver()
     {
-
-        gameOver.SetActive(true);
+        gameOverSign.SetActive(true);
+    }
+    public void YouBrokeABrick()
+    {
+        var bricksLeft = FindObjectsOfType<brick>().Length;
+        if(bricksLeft == 0)
+        {
+            youWinSign.SetActive(true);
+        }
     }
 }

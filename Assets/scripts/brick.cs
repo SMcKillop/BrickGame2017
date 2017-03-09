@@ -11,6 +11,7 @@ public class brick : MonoBehaviour {
         if(strength == 0)
         {
             this.gameObject.SetActive(false);
+            FindObjectOfType<ball>().YouBrokeABrick();
         }
     }
 
