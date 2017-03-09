@@ -3,15 +3,17 @@ using System.Collections;
 
 public class brick : MonoBehaviour {
 
+    public int strength = 1;
 
-	// Use this for initialization
-	void Start () {
-
-
-    }
-
-    void OnCollisionEnter2D(Collision2D coll)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
-        gameObject.SetActive(false);
+        strength--;
+        if(strength == 0)
+        {
+            this.gameObject.SetActive(false);
+        }
     }
+
+
+ 
 }
