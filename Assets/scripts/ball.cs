@@ -25,7 +25,7 @@ public class ball : MonoBehaviour
 
     void Update()
     {
-        if (transform.position.y < -3.5f)
+        if (transform.position.y < -5.5f)
         {
             GetOut();
         }
@@ -55,9 +55,9 @@ public class ball : MonoBehaviour
     {
         gameOverSign.SetActive(true);
     }
-    public void YouBrokeABrick()
+    public void YouBrokeABrick(int worth)
     {
-        points += 1;
+        points += worth;
         pointsValue.text = points.ToString();
         var bricksLeft = FindObjectsOfType<brick>().Length;
         if(bricksLeft == 0)
